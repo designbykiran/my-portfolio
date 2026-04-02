@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ 
+}
+:root{
+--main-color:#0D0E68;
+--min-col0r:#2D2E76;
+--sub-color:#9B9CED;
+
+}
+body{
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(140deg, var(--main-color), var(--sub-color));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto 5em;
+  transition: 5s ease;
+  animation: up 2s ease;
+}
+@keyframes up {
+  from{
+transform: translateY(-100px);
+  }
+  to{
+transform: translateY(0px);
+  }
+}
+
+.Fontlogo {
+  font-size: 20px; 
+     color: #fff;
+     font-weight: lighter;
+}
+nav ul{
+  display: flex;
+  gap: 20px;
+}
+nav li{
+  list-style: none;
+  color: #fff;
+}
+nav a{
+  text-decoration: none;
+  color: #fff;
+ font-size: clamp(1.1rem, calc(1vw + 0rem), 3rem);
+ border-radius: 20px;
+ padding: 3px 10px;
+ text-align: center;
+ background-color: var(--sub-color);
+ font-weight: 450;
+}
+nav a:hover{
+  background-color: var(--min-col0r);
+}
+#color{
+background-color: var(--min-col0r);
+}
+.link-list{
+  background-color:rgba(128, 128, 128, 0.285);
+  padding: min(0.6em,2%);
+  border-radius: 50px;
+
+}
+/*------------------main */
+.intro{
+ animation: intro 5s ease-in forwards; /* run 5s, ease-in, keep final state */
+}
+@keyframes intro {
+  from{
+
+opacity: 0;
+  }
+  to{
+opacity: 1;
+  }
+}
+.logo-k {
+  font-size: 40px; 
+  font-weight: 400;
+}
+
+.about{
+
+  margin: 10em 10em;
+  
+}
+button a{
+  text-decoration: none;
+  color: #fff;
+}
+.htext {
+  font-size: clamp(1.1rem, calc(3vw + 0rem), 3rem);
+  background: linear-gradient(90deg, #9B9CED, #F7F7F7);
+  -webkit-background-clip: text; /* needed for most browsers */
+  -webkit-text-fill-color: transparent; /* makes text show the background */
+  
+}
+
+.ptext{
+    font-size: clamp(1.1rem, calc(0.3vw + 0rem), 3rem);
+   color: #fff;
+  width: 550px;
+}
+.video {
+  width: 800px;
+  border-radius: 20px;
+   corner-shape:scoop;
+   box-shadow: 3px 6px 7px #0d0f6854;
+    overflow: hidden; /* ensures the video respects rounded corners */
+}
+
+.editing {
+  margin-left: 16rem;
+ animation: video 3s ease-in forwards; /* run 5s, ease-in, keep final state */
+}
+@keyframes video {
+  from{
+opacity: 0;
+  }
+  to{
+opacity: 1;
+  }
+}
+.btn{
+  padding:  0.8rem 1rem;
+  float: right;
+  border-radius: 20px;
+background: rgba(139, 118, 118, 0.231);
+backdrop-filter: blur(20px);
+color: #fff;
+  border: none;
+  margin-top: 1em;
+  font-weight: 500;
+}
+.btn:hover{
+  background-color: #2D2E76;
+}
+.case{
+  font-size: 2rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 5rem 6rem;
+}
+.case-study{
+  margin: 0rem 3rem ;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(90deg, #9b9ced0c, #F7F7F7);
+  filter: brightness(10px);
+  border-radius: 50px;
+}
+.text{
+  color: #fff;
+  margin: 0 4rem;
+}
+.water{
+  font-size: 3rem;
+  font-weight: 600;
+}
+.case-btn{
+  padding: 1em;
+  border-radius: 50px;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #2d2e7661;
+  margin-top: 0.8rem;
+}
+.case-btn:hover{
+   background-color: #2d2e76bb;
+}
+.login-app{
+  width: 70%;
+}
+    

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+    <style>
+      *{
+        padding: 0;margin: 0;box-sizing: border-box;
+      }
+:root{
+  --main-color:#0D0E68;
+  --min-color:#2D2E76;
+  --sub-color:#9B9CED;
+}
+
+body{
+  overflow-x: hidden;
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(140deg, var(--main-color), var(--sub-color));
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+header{
+  width: 100%;
+}
+/* General nav styles */
+nav {
+    max-width: 1200px;
+  margin: 0 auto;
+ padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.5s ease;
+  animation: up 2s ease;
+}
+
+@keyframes up {
+  from { transform: translateY(-100px); }
+  to { transform: translateY(0px); }
+}
+.Fontlogo { font-size: 20px; color: #fff; font-weight: lighter; }
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-size: clamp(1.1rem, calc(1vw + 0rem), 3rem);
+  border-radius: 20px;
+  padding: 3px 10px;
+  text-align: center;
+  background-color: var(--sub-color);
+  font-weight: 500;
+}
+nav a:hover { background-color:var(--min-color) }
+#color { background-color: var(--min-col0r); }
+.link-list {
+  background-color: rgba(128, 128, 128, 0.285);
+  padding: min(0.6em,2%);
+  border-radius: 50px;
+}
+#color { background-color: var(--min-color); }
+/* Menu button */
+#Openmenu-bar {
+  font-size: 2rem;
+  background-color: transparent;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+/*------------------main */
+.main{
+  text-align: center;
+  font-weight: 600;
+  font-size: 17px;
+
+  max-width: 800px;     /* control width */
+  margin: 0 auto;       /* center container */
+  padding: 0 1rem;      /* mobile spacing */
+
+  background: linear-gradient(90deg, #9B9CED, #F7F7F7);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; 
+}
+  
+.intro{
+ animation: intro 5s ease-in forwards; /* run 5s, ease-in, keep final state */
+}
+@keyframes intro {
+  from{
+
+opacity: 0;
+  }
+  to{
+opacity: 1;
+  }
+}
+.logo-k {
+  font-size: 40px; 
+  font-weight: 400;
+}
+
+.carlosel{
+  margin: 2em 4em;
+}
+.skill{
+  margin-top: 3em;
+  text-align: center;
+  font-size: 40px;
+  text-transform: capitalize;
+   background: linear-gradient(90deg, #3e40be, #F7F7F7);
+ background-clip: text; /* needed for most browsers */
+  -webkit-text-fill-color: transparent; 
+}
+
+.carlosel {
+  display: flex;
+  overflow: hidden; /* hide overflowing cards */
+margin: 2em 4em;
+  gap: 5em;
+  padding: 0 2em;
+}
+.groupe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5em;
+ 
+  animation: move 10s linear infinite;
+}
+.card {
+  flex: 0 0 auto;          /* prevent shrinking */
+  padding: 5px 10px;
+  font-size: 17px;
+  color: #fff;              /* text color */
+  background-color: rgba(188, 176, 176, 0.151); /* background color with transparency */
+  border-radius: 10px;      /* optional: rounded corners */
+  white-space: nowrap; 
+}
+@keyframes move {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%); /* move half so duplicated group continues smoothly */
+  }
+}
+.my{
+font-size: clamp(1rem,7vw,2rem);
+  margin: 2em 1em;
+}
+.my h1,
+.my h3{
+  font-size: 30px;
+  margin: 0;
+  color: #fff;
+}
+
+#my-principles{
+  display: flex;
+ justify-content: space-between;
+ gap: 4rem;
+  padding: 0 1rem;
+ margin: 10em 2em 10em 2em;
+}
+
+.design-principles h1,
+.design-principles p {
+     color: #fff; 
+}
+
+/* Container */
+.stact{
+  perspective:1200px;
+}
+
+/* Card */
+.icon-text{
+  position:sticky;
+  transform-style:preserve-3d;
+  display:flex;
+  top: 100px;
+  max-width: 600px;
+  padding:2em 1em;
+  background:linear-gradient(190deg,#2d2e76aa,#2d2e7633);
+  border-radius:30px;
+  box-shadow:0 20px 40px rgba(0,0,0,.5);
+  color:white;
+}
+
+#card1{
+  z-index:3;
+}
+
+/* Card 2 animation */
+#card2{
+  z-index:2;
+  animation: stack2 linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 60%;
+}
+
+/* Card 3 animation */
+#card3{
+  z-index:1;
+  animation: stack3 linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 70%;
+}
+
+/* Animations */
+
+@keyframes stack2{
+  from{
+    transform:translateY(250px) rotateX(20deg) scale(.9);
+    opacity:.6;
+ 
+  }
+  to{
+    transform:translateY(0) rotateX(0deg) scale(1);
+    opacity:1;
+       transform: rotate(10deg)
+  }
+}
+
+@keyframes stack3{
+  from{
+    transform:translateY(350px) rotateX(25deg) scale(.85);
+    opacity:.5;
+  }
+  to{
+    transform:translateY(0) rotateX(0deg) scale(1);
+    opacity:1;
+     transform: rotate(-10deg)
+  }
+}
+
+/* Text & Icon */
+.text1 p{
+  margin:0;
+  width: 100%;
+}
+
+.icon{
+  background:#fff;
+  width:50px;
+  height:30px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#2d2e76;
+}
+
+.Be-considerate{
+  font-size:1.4rem;
+  font-weight:600;
+}
+
+.some-lines{
+  opacity:.9;
+  margin-top:.5rem;
+}
+
+.move1{
+  display: flex;
+gap: 5rem;
+overflow-x: hidden;
+padding-bottom: 3em;
+
+}
+.groupe2{
+  display: flex;
+  gap: 5rem;
+  animation: move1 8s linear infinite;
+}
+.lines{
+border-radius: 30px;
+color: #fff;
+  padding: 0.3em 1em;
+  font-size: 1rem;
+  font-weight: 400;
+ background-image: linear-gradient( 20deg,#6365e2,#0d0f680e);
+}
+@keyframes move1 {
+  from{
+    transform: translate(0%);
+  }
+  to{
+    transform: translateX(-50%);
+  }
+}
+.more-info{
+  text-align: center;
+  color: #fff;
+  font-size: 18px;
+  background-color: var(--min-color);
+  padding: 3em;
+}
+
+
+@media(max-width:768px) {
+    #Openmenu-bar { 
+      display: block;
+color: #fff;
+.head{
+  display: none;
+}
+  }
+
+  .link-list {
+    position: fixed;
+    top: 0% ;
+    right: -100%; /* hide offscreen */
+    height: 100%;
+    width: 250px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: rgba(56, 56, 56, 0.185);
+    transition: right 0.3s ease;
+    z-index: 1000;
+border-radius: none !important;
+  }
+
+  .link-list.active { right: 0;border-radius: none !important; } /* slide in */
+
+  nav ul { 
+    width: 100%;
+    flex-direction: column;
+     gap: 30px; }
+     .more-info{
+      width: 100%;
+     }
+     .more-info p{
+      width: 100%;
+     }
+     .skill1{
+      margin-left: 0;
+     }
+     .skills{
+      margin: 0;
+      text-align: center;
+      margin-top: 1em;
+      margin-bottom: 1em;
+     }
+     #my-principles{
+    flex-direction: column;   /* 🔥 MAIN FIX */
+    align-items: center;
+  }
+
+  .design-principles{
+    text-align: center;
+    max-width: 600px;
+  }
+
+  .stact{
+    width: 100%;
+    padding-bottom: 50px;
+  }
+
+  .icon-text{
+    position: relative;   
+    width: 100%;          
+    max-width: 400px;
+    margin: 1rem auto;
+  }
+}
+</style>
+<header>
+  <nav>
+    <h1 class="Fontlogo">
+      <span class="logo-k">k</span>iran
+    </h1>
+
+    <ul class="link-list" id="nav-links">
+       <li><a href="index.html" >Home</a></li>
+      <li><a href="about.html" id="color">About me</a></li>
+      <li><a href="index.html">Work</a></li>
+      <li><a href="cv.html">CV</a></li>
+    </ul>
+
+    <button id="Openmenu-bar"><i class="fa-solid fa-bars"></i></button>
+  </nav>
+</header>
+<section class="my">
+<h1 class="head">She/Her</h1>
+<h3 class="sub-head">Hi there! I'm kiran,a <span id="element"></span>
+</h3>
+</section>
+<div class="main">
+    <p>Hi, I'm Kiran, a passionate Web Designer with a BA and PGDCA background. After completing my education, I pursued professional Web Designing training in Chandigarh.
+For the past one year, I have been creating modern, responsive, and user-friendly websites. I specialize in HTML, CSS, JavaScript, Bootstrap, and Photoshop, designing attractive landing pages, responsive layouts, and clean login pages.</p>
+</div>
+
+<section class="skill">
+  <h3 >my skills</h3>
+</section>
+<div class="carlosel">
+  <div class="groupe">
+    <div class="card">Html</div>
+    <div class="card">CSS</div>
+    <div class="card">Bootstrap</div>
+    <div class="card">JavaScript</div>
+    <div class="card">figma</div>
+    <div class="card">Photoshop</div>
+      <div class="card">Canva</div>
+  </div>
+  <div aria-hidden="true" class="groupe">
+    <div class="card">Html</div>
+    <div class="card">CSS</div>
+    <div class="card">Bootstrap</div>
+    <div class="card">JavaScript</div>
+    <div class="card">figma</div>
+    <div class="card">Photoshop</div>
+     <div class="card">Canva</div>
+  </div>
+</div>
+<section id="my-principles">
+  <div class="design-principles">
+    <h1>My design principles</h1>
+<p>I've come up my own design principles that guide me every day. These are the ones I care about the most</p>
+  </div>
+
+  
+<div class="stact">
+  <div class="icon-text" id="card1">
+    <div class="icon">
+      <i class="fa-solid fa-heart"></i>
+    </div>
+    <div class="text1">
+      <p class="Be-considerate">Be considerate</p>
+      <p class="some-lines">Show care for every person who uses your design. Recognize exclusions and create inclusive experiences</p>
+    </div>
+  </div>
+  <div class="icon-text" id="card2">
+    <div class="icon">
+      <i class="fa-solid fa-handshake"></i>
+    </div>
+    <div class="text1">
+      <p class="Be-considerate">Build trust 
+</p>
+      <p class="some-lines">
+Be genuine and transparent. Show users and stakeholders that you act in their best interests</p>
+    </div>
+  </div>
+  <div class="icon-text" id="card3">
+    <div class="icon">
+     <i class="fa-solid fa-layer-group"></i>
+    </div>
+    <div class="text1">
+      <p class="Be-considerate">Create consistency</p>
+      <p class="some-lines">Use familiar patterns to make experiences recognizable. Help your teams achieve goals with less effort</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="more-info">
+  <p>I am a creative and detail-oriented Web Designer with a passion for designing clean, user-friendly, and responsive websites. I focus on modern design trends and user experience to create visually appealing digital products.</p>
+</section>
+    <script src="https://unpkg.com/typed.js@3.0.0/dist/typed.umd.js"></script>
+      <script>
+    var typed = new Typed('#element', {
+      strings: ['Web designer.', 'web devolper.','UI/UX designer.'],
+      typeSpeed: 60,
+backSpeed: 40,
+backDelay: 1500,
+startDelay: 500,
+loop: true
+
+    });
+  </script>
+  <script>const menuBtn = document.getElementById("Openmenu-bar");
+const navUI = document.querySelector('nav ul');
+menuBtn.addEventListener("click",(e) =>{
+  navUI.classList.toggle('active');
+//hidden button if click on menu
+if(navUI.classList.contains('active')){
+menuBtn.style.display = "none";}
+e.stopPropagation();
+})
+// Close menu on clicking anywhere outside
+document.addEventListener("click",(e)=>{
+  if(!navUI.contains(e.target)&&  e.target !==menuBtn){
+    navUI.classList.remove('active'); 
+    menuBtn.style.display = "block";
+  }
+})</script>
+</body>
+</html>
