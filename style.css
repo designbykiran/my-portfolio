@@ -29,6 +29,9 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+#introVideo{
+  height: 100vh;
+}
 /* General nav styles */
 nav {
     max-width: 1200px;
